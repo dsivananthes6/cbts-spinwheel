@@ -39,9 +39,12 @@
             height: 0;
             border-top: 20px solid transparent;
             border-bottom: 20px solid transparent;
-            border-right: 30px solid #1f2937;
+            border-right: 30px solid #ef4444;
+            /* Changed to bright red */
             /* Pointing left */
             z-index: 10;
+            filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+            /* Added shadow for depth */
         }
 
         /* Hide scrollbar for clean look */
@@ -87,10 +90,11 @@
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(2px);
         }
+
         .bg-cbts-900 {
-    --tw-bg-opacity: 1;
-    background-color: #1F3558;
-}
+            --tw-bg-opacity: 1;
+            background-color: #1F3558;
+        }
     </style>
 </head>
 
@@ -218,6 +222,16 @@
             '#ec4899'  // Pink-500 (Player 6)
         ];
 
+        // Icons corresponding to each slice index
+        const teamIcons = [
+            '🕵️', // Incident Detectives
+            '🥷', // Network Ninja
+            '🤖', // Automation Avengers
+            '🔨', // SharePoint Smashers
+            '☁️', // Cloud Commanders
+            '⚡'  // Extra
+        ];
+
         // Lighter versions for backgrounds
         const lightColors = [
             '#fef2f2',
@@ -311,194 +325,169 @@
             ],
             // Index 2 (Default: Network Automation) - Network Automation
             [
-            {
-                q: "What is Netauto?",
-                a: ""
-            },
-            {
-                q: "What is NIAC?",
-                a: ""
-            },
-            {
-                q: "What are the responsibilities of automation team?",
-                a: ""
-            },
-            {
-                q: "What is a workflow?",
-                a: ""
-            },
-            {
-                q: "How many workflows we have automated?",
-                a: ""
-            },
-            {
-                q: "What is the front-end technology we use?",
-                a: ""
-            },
-            {
-                q: "What is the backend technology we use?",
-                a: ""
-            },
-            {
-                q: "What is No-Touch changes mean?",
-                a: ""
-            },
-            {
-                q: "How can we automate device configurations?",
-                a: ""
-            },
-            {
-                q: "What database we use?",
-                a: ""
-            },
-            {
-                q: "What method of development we follow?",
-                a: ""
-            },
-            {
-                q: "How many integrations we had done so far?",
-                a: ""
-            },
-            {
-                q: "What are the logging mechanisms we use?",
-                a: ""
-            },
-            {
-                q: "Have we used AI in the automation?",
-                a: ""
-            },
-            {
-                q: "What are the clouds we integrated?",
-                a: ""
-            }
-            ],
+                { q: "What is NetAuto and what problem does it solve?", a: "NetAuto is an in-house platform that automates network operations to reduce manual effort, errors, and provisioning time." },
+                { q: "What is NIAC and why is it important?", a: "NIAC is the Network Infrastructure as Code team who automates provisioning of network-specific cloud resources in AWS and Azure." },
+                { q: "What are the core components of the NetAuto platform?", a: "Core components include the workflow engine, API layer, UI, database, and integration modules." },
+                { q: "How is NetAuto architected?", a: "It follows a modular, scalable, API-driven, microservices-based architecture." },
+                { q: "What are the design principles followed in NetAuto?", a: "Reliability, scalability, security, modularity, and reusability." },
+                { q: "What is a No-Touch Change?", a: "An automated sequence that runs in the background to perform a network change without manual intervention." },
+                { q: "How are workflows designed and maintained?", a: "Workflows are created using reusable templates and maintained through version control." },
+                { q: "How do you handle workflow failures?", a: "Through automated error handling, retries, rollbacks, and alerting." },
+                { q: "What is rollback in an automated workflow?", a: "Rollback automatically reverts changes when a failure is detected." },
+                { q: "What are idempotent operations in automation?", a: "Operations that can be executed multiple times without altering the final outcome." },
+                { q: "What front-end technologies are used in automation platforms?", a: "Angular." },
+                { q: "What back-end technologies are typically used?", a: "Python." },
+                { q: "What type of APIs are used in automation systems?", a: "Primarily RESTful APIs." },
+                { q: "How do you manage version control?", a: "Using Bitbucket repositories." },
+                { q: "What development methodology is followed?", a: "Agile and sprint-based development." },
+                { q: "What is Infrastructure as Code (IaC)?", a: "Managing infrastructure using code instead of manual processes." },
+                { q: "How are network device configurations automated?", a: "Using templates, scripts, APIs, and CLI-based automation tools." },
+                { q: "What is configuration drift and how do you prevent it?", a: "Configuration drift is deviation from standards, prevented using continuous compliance checks." },
+                { q: "What is device compliance automation?", a: "Automated validation of device configurations against defined policies." },
+                { q: "How do you validate pre-check and post-check conditions?", a: "By running automated scripts to verify system state before and after changes." },
+                { q: "What types of third-party integrations are supported?", a: "ServiceNow, AVI, IPAM, monitoring tools, cloud platforms, and security tools." },
+                { q: "How do you handle authentication for integrations?", a: "Using OAuth, tokens, and API keys." },
+                { q: "What cloud platforms are commonly integrated?", a: "AWS and Microsoft Azure." },
+                { q: "What is event-driven automation?", a: "Automation triggered automatically based on system events or alerts." },
+                { q: "What logging mechanisms are used in automation platforms?", a: "Splunk logging and application logs." },
+                { q: "How is auditing handled in automated environments?", a: "Through detailed change tracking and immutable audit trails." },
+                { q: "What monitoring tools are integrated?", a: "SolarWinds." },
+                { q: "How do you secure automation platforms?", a: "By implementing RBAC, encryption, and secure APIs." },
+                { q: "What is role-based access control (RBAC)?", a: "A security model that restricts system access based on user roles and groups." },
+                { q: "How is AI used in network automation?", a: "For predictive analytics, intelligent alerting, and automated remediation." },
+                { q: "What is the role of machine learning in infrastructure automation?", a: "To detect patterns, predict failures, and optimize performance." },
+                { q: "What are predictive and self-healing networks?", a: "Networks that automatically detect, prevent, and resolve issues." },
+                { q: "How do you measure automation success?", a: "By tracking time saved, error reduction, and operational efficiency." },
+                { q: "What are the future enhancements planned?", a: "Expanding AI capabilities, adding more integrations, and increasing automation coverage." }
+            ]
+            ,
 
             // Index 3 (Default: CEG) - CEG
             [
-            {
-                q: "What is Netauto?",
-                a: ""
-            },
-            {
-                q: "What is NIAC?",
-                a: ""
-            },
-            {
-                q: "What are the responsibilities of automation team?",
-                a: ""
-            },
-            {
-                q: "What is a workflow?",
-                a: ""
-            },
-            {
-                q: "How many workflows we have automated?",
-                a: ""
-            },
-            {
-                q: "What is the front-end technology we use?",
-                a: ""
-            },
-            {
-                q: "What is the backend technology we use?",
-                a: ""
-            },
-            {
-                q: "What is No-Touch changes mean?",
-                a: ""
-            },
-            {
-                q: "How can we automate device configurations?",
-                a: ""
-            },
-            {
-                q: "What database we use?",
-                a: ""
-            },
-            {
-                q: "What method of development we follow?",
-                a: ""
-            },
-            {
-                q: "How many integrations we had done so far?",
-                a: ""
-            },
-            {
-                q: "What are the logging mechanisms we use?",
-                a: ""
-            },
-            {
-                q: "Have we used AI in the automation?",
-                a: ""
-            },
-            {
-                q: "What are the clouds we integrated?",
-                a: ""
-            }
+                {
+                    q: "What is Netauto?",
+                    a: ""
+                },
+                {
+                    q: "What is NIAC?",
+                    a: ""
+                },
+                {
+                    q: "What are the responsibilities of automation team?",
+                    a: ""
+                },
+                {
+                    q: "What is a workflow?",
+                    a: ""
+                },
+                {
+                    q: "How many workflows we have automated?",
+                    a: ""
+                },
+                {
+                    q: "What is the front-end technology we use?",
+                    a: ""
+                },
+                {
+                    q: "What is the backend technology we use?",
+                    a: ""
+                },
+                {
+                    q: "What is No-Touch changes mean?",
+                    a: ""
+                },
+                {
+                    q: "How can we automate device configurations?",
+                    a: ""
+                },
+                {
+                    q: "What database we use?",
+                    a: ""
+                },
+                {
+                    q: "What method of development we follow?",
+                    a: ""
+                },
+                {
+                    q: "How many integrations we had done so far?",
+                    a: ""
+                },
+                {
+                    q: "What are the logging mechanisms we use?",
+                    a: ""
+                },
+                {
+                    q: "Have we used AI in the automation?",
+                    a: ""
+                },
+                {
+                    q: "What are the clouds we integrated?",
+                    a: ""
+                }
             ],
             // Index 4 (Default: NSS) - NSS
             [
-            {
-                q: "What is Netauto?",
-                a: ""
-            },
-            {
-                q: "What is NIAC?",
-                a: ""
-            },
-            {
-                q: "What are the responsibilities of automation team?",
-                a: ""
-            },
-            {
-                q: "What is a workflow?",
-                a: ""
-            },
-            {
-                q: "How many workflows we have automated?",
-                a: ""
-            },
-            {
-                q: "What is the front-end technology we use?",
-                a: ""
-            },
-            {
-                q: "What is the backend technology we use?",
-                a: ""
-            },
-            {
-                q: "What is No-Touch changes mean?",
-                a: ""
-            },
-            {
-                q: "How can we automate device configurations?",
-                a: ""
-            },
-            {
-                q: "What database we use?",
-                a: ""
-            },
-            {
-                q: "What method of development we follow?",
-                a: ""
-            },
-            {
-                q: "How many integrations we had done so far?",
-                a: ""
-            },
-            {
-                q: "What are the logging mechanisms we use?",
-                a: ""
-            },
-            {
-                q: "Have we used AI in the automation?",
-                a: ""
-            },
-            {
-                q: "What are the clouds we integrated?",
-                a: ""
-            }
-         
+                {
+                    q: "What is Netauto?",
+                    a: ""
+                },
+                {
+                    q: "What is NIAC?",
+                    a: ""
+                },
+                {
+                    q: "What are the responsibilities of automation team?",
+                    a: ""
+                },
+                {
+                    q: "What is a workflow?",
+                    a: ""
+                },
+                {
+                    q: "How many workflows we have automated?",
+                    a: ""
+                },
+                {
+                    q: "What is the front-end technology we use?",
+                    a: ""
+                },
+                {
+                    q: "What is the backend technology we use?",
+                    a: ""
+                },
+                {
+                    q: "What is No-Touch changes mean?",
+                    a: ""
+                },
+                {
+                    q: "How can we automate device configurations?",
+                    a: ""
+                },
+                {
+                    q: "What database we use?",
+                    a: ""
+                },
+                {
+                    q: "What method of development we follow?",
+                    a: ""
+                },
+                {
+                    q: "How many integrations we had done so far?",
+                    a: ""
+                },
+                {
+                    q: "What are the logging mechanisms we use?",
+                    a: ""
+                },
+                {
+                    q: "Have we used AI in the automation?",
+                    a: ""
+                },
+                {
+                    q: "What are the clouds we integrated?",
+                    a: ""
+                }
+
             ]
 
 
@@ -551,7 +540,7 @@
                 ctx.fill();
                 ctx.stroke();
 
-                // Draw Text
+                // Draw Text & Icon
                 ctx.save();
                 ctx.translate(centerX, centerY);
                 ctx.rotate(angle + arcSize / 2);
@@ -561,19 +550,57 @@
                 ctx.shadowColor = "rgba(0,0,0,0.3)";
                 ctx.shadowBlur = 4;
 
+                const name = names[i];
+                const icon = teamIcons[i % teamIcons.length];
+
+                // Split text into two lines based on first space
+                const words = name.split(' ');
+                let line1 = words[0];
+                let line2 = words.slice(1).join(' ');
+
                 // Dynamic Font Scaling
                 let fontSize = 24;
                 ctx.font = `bold ${fontSize}px Poppins`;
-                const maxW = radius - 70; // Available width (radius - outer padding - center hub)
-                const text = names[i];
+
+                // Max width allowed in the slice
+                const maxW = radius - 70;
+
+                // Measure widths
+                // We estimate the width of Line 1 + Icon + Padding
+                let iconWidth = fontSize + 10;
+                let line1Width = ctx.measureText(line1).width;
+                let line2Width = ctx.measureText(line2).width;
+
+                // Check if widest part fits
+                let totalW1 = line1Width + iconWidth;
+                let totalW2 = line2Width;
 
                 // Reduce font size until it fits
-                while (ctx.measureText(text).width > maxW && fontSize > 8) {
+                while ((totalW1 > maxW || totalW2 > maxW) && fontSize > 10) {
                     fontSize--;
                     ctx.font = `bold ${fontSize}px Poppins`;
+                    iconWidth = fontSize + 10;
+                    line1Width = ctx.measureText(line1).width;
+                    line2Width = ctx.measureText(line2).width;
+                    totalW1 = line1Width + iconWidth;
+                    totalW2 = line2Width;
                 }
 
-                ctx.fillText(text, radius - 20, 0);
+                // Drawing logic
+                // If we have a second line, stack them.
+                if (line2) {
+                    // Line 1 (Upper)
+                    ctx.fillText(line1, radius - 20, -fontSize * 0.6);
+                    // Icon (Left of Line 1)
+                    ctx.fillText(icon, radius - 20 - line1Width - 10, -fontSize * 0.6);
+                    // Line 2 (Lower)
+                    ctx.fillText(line2, radius - 20, fontSize * 0.7);
+                } else {
+                    // Single line case
+                    ctx.fillText(line1, radius - 20, 0);
+                    ctx.fillText(icon, radius - 20 - line1Width - 10, 0);
+                }
+
                 ctx.restore();
             }
 
