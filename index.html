@@ -87,13 +87,17 @@
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(2px);
         }
+        .bg-cbts-900 {
+    --tw-bg-opacity: 1;
+    background-color: #1F3558;
+}
     </style>
 </head>
 
 <body class="text-gray-800 min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-indigo-900 text-white p-4 shadow-lg">
+    <header class="bg-cbts-900 text-white p-4 shadow-lg">
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i data-lucide="circle-dashed" class="w-8 h-8 text-pink-500"></i>
@@ -206,10 +210,10 @@
 
         // --- Configuration ---
         const colors = [
-            '#ef4444', // Red-500 (Player 1)
-            '#06b6d4', // Cyan-500 (Player 2)
-            '#3b82f6', // Blue-500 (Player 3)
-            '#22c55e', // Green-500 (Player 4)
+            '#1F3558', // Deep navy background (Player 1)
+            '#2BE4D3', // Bright aqua/cyan text (Player 2)
+            '#1A2A44', // Even darker navy gradient area(Player 3)
+            '#3EA7A0', // Secondary ton-500 (Player 4)
             '#eab308', // Yellow-500 (Player 5)
             '#ec4899'  // Pink-500 (Player 6)
         ];
@@ -704,7 +708,7 @@
 
             // Shuffle and pick 5
             const shuffledPool = shuffle([...playerPool]);
-            const selectedQuestions = shuffledPool.slice(0, 5);
+            const selectedQuestions = shuffledPool.slice(0, 4);
 
             selectedQuestions.forEach((item, i) => {
                 const card = document.createElement('div');
