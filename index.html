@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SYF-CBTS Spin & Quiz</title>
+    <title>Spionvation Hub by CBTS</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -105,7 +105,7 @@
         <div class="max-w-5xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <i data-lucide="circle-dashed" class="w-8 h-8 text-pink-500"></i>
-                <h1 class="text-2xl font-bold tracking-wider">SYF-CBTS SPIN & QUIZ</h1>
+                <h1 class="text-2xl font-bold tracking-wider">Spionvation Hub by CBTS</h1>
             </div>
             <button onclick="resetGame()"
                 class="text-sm bg-indigo-700 hover:bg-indigo-600 px-4 py-2 rounded-lg border border-indigo-500 transition flex items-center gap-2">
@@ -122,11 +122,11 @@
                 <h2 class="text-xl font-bold text-gray-700 flex items-center gap-2">
                     <span
                         class="bg-indigo-100 text-indigo-700 w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
-                    Spin the Wheel
+                    Spin to know. Learn to grow
                 </h2>
                 <!-- Edit Names Toggle -->
-                <button onclick="toggleEdit()" class="text-xs text-gray-500 hover:text-indigo-600 underline">Edit
-                    Names</button>
+                <!-- <button onclick="toggleEdit()" class="text-xs text-gray-500 hover:text-indigo-600 underline">Edit
+                    Names</button> -->
             </div>
 
             <!-- Edit Panel (Hidden by default) -->
@@ -177,7 +177,7 @@
                         <!-- Player Name Injected Here -->
                     </span>
                 </div>
-                <p id="q-subtitle" class="text-sm text-gray-500 mt-2">Spin the wheel to assign questions to a player.
+                <p id="q-subtitle" class="text-sm text-gray-500 mt-2">Spin the wheel .
                 </p>
             </div>
 
@@ -191,8 +191,7 @@
                         <i data-lucide="lock" class="w-8 h-8 text-gray-400"></i>
                     </div>
                     <h3 class="text-lg font-semibold text-gray-600">Waiting for Spinner...</h3>
-                    <p class="text-sm text-gray-400 max-w-xs mt-1">Spin the wheel to find out who needs to answer these
-                        questions!</p>
+                    <p class="text-sm text-gray-400 max-w-xs mt-1">Spin the wheel </p>
                 </div>
 
                 <!-- Questions List (Hidden initially) -->
@@ -205,7 +204,7 @@
     </main>
 
     <footer class="text-center p-6 text-gray-400 text-sm">
-        <p>© 2025 SYF-CBTS Spin & Quiz Game</p>
+        <p>© 2025 Spionvation Hub by CBTS</p>
     </footer>
 
     <script>
@@ -283,44 +282,88 @@
             // Index 1 (Default: Network Ninja) - Network Ninja
             [
                 {
+                    q: "Do you know who is our cloud DC service provider?",
+                    a: "Equinix"
+                },
+                {
+                    q: "Who are the cloud service providers of Synchrony?",
+                    a: "AWS and Azure"
+                },
+                {
+                    q: "How many Synchrony hubs we have in Philippines?",
+                    a: "2 - CEBU & Manila"
+                },
+                {
+                    q: "Which proxy service we use in Synchrony?",
+                    a: "Zscaler"
+                },
+                {
+                    q: "Can you guess which CISCO product we use for wireless in Synchrony hub?",
+                    a: "Cisco Meraki"
+                },
+                {
+                    q: "Can you guess the ISP’s name we use in Philippines hub?",
+                    a: "Radius, Globe & PLDT"
+                },
+                {
+                    q: "Which tool we use as log collector in Synchrony?",
+                    a: "Splunk"
+                },
+                {
+                    q: "Which team architects and builds load balancer change requests in Synchrony?",
+                    a: "NLB Team"
+                },
+                {
+                    q: "Which team architects and builds Zscaler change requests in Synchrony?",
+                    a: "NAS Team"
+                },
+                {
+                    q: "Which team architects and builds DNS change requests?",
+                    a: "NIS Team"
+                },
+                {
+                    q: "Which vendor powers Synchrony firewall brain?",
+                    a: "PaloAlto"
+                },
+                {
+                    q: "How many hubs does Synchrony have in APAC region?",
+                    a: "3 - HKC, CEBU & Manila"
+                },
+                {
+                    q: "How do we ensure the business continuity when one ISP fails at any Synchrony office location?",
+                    a: "Automatic failover is configured in Fortinet SDWAN"
+                },
+                {
+                    q: "Which product powers Synchrony load balancer brain?",
+                    a: "Avi Broadcom load balancers"
+                },
+                {
+                    q: "Can you guess how apps traffic will work if Synchrony DC loses power?",
+                    a: "App traffic will flow through AWS and Azure clouds"
+                },
+                {
+                    q: "Who are the three ISP which we use on HKC?",
+                    a: "Tata, Airtel & JIO"
+                },
+                {
+                    q: "Which Monitoring tool is used for monitoring network health in Synchrony?",
+                    a: "SolarWinds"
+                },
+                {
+                    q: "Which provider powers Synchrony SDWAN brain?",
+                    a: "Fortinet"
+                },
+                {
+                    q: "Can you guess which type of incidents did CBTS NOC get the most?",
+                    a: "BGP Alerts"
+                },
+                {
                     q: "What are the two WIFI SSID we use in HKC office?",
                     a: "Bold & Friends"
                 },
                 {
-                    q: "How many physical data centers we have for Syf?",
+                    q: "How many Physical data centers we have for Synchrony?",
                     a: "2 (Dallas & Phoenix)"
-                },
-                {
-                    q: "What are the three ISPs which we use on HKC?",
-                    a: "Tata, Airtel, Jio"
-                },
-                {
-                    q: "Which monitoring tool is used for monitoring network health in Syf?",
-                    a: "SolarWinds"
-                },
-                {
-                    q: "Which vendor powers Syf SDWAN brain?",
-                    a: "Fortinet"
-                },
-                {
-                    q: "Which vendor powers Syf firewall brain?",
-                    a: "Palo Alto"
-                },
-                {
-                    q: "How many business centers does Syf have in APAC region?",
-                    a: "HKC and Philippines"
-                },
-                {
-                    q: "How do we ensure the business continues even when one ISP goes down at any location in Syf office?",
-                    a: "Fortinet SDWAN takes care of automatic failover to other available ISPs"
-                },
-                {
-                    q: "Which vendor powers Syf loadbalancer brain?",
-                    a: "Avi Broadcom loadbalancer"
-                },
-                {
-                    q: "If the entire Syf DC loses power but your apps are still working, who is running them?",
-                    a: "AWS, Azure clouds"
                 }
             ],
             // Index 2 (Default: Network Automation) - Network Automation
@@ -362,133 +405,149 @@
             ]
             ,
 
-            // Index 3 (Default: CEG) - CEG
+            // Index 3 (Default: SharePoint Smashers) - SharePoint Smashers
             [
                 {
-                    q: "What is Netauto?",
-                    a: ""
+                    q: "What is the default OneDrive storage allocated to each user?",
+                    a: "2TB"
                 },
                 {
-                    q: "What is NIAC?",
-                    a: ""
+                    q: "How much OneDrive storage has been used so far?",
+                    a: "785 TB (Approx)"
                 },
                 {
-                    q: "What are the responsibilities of automation team?",
-                    a: ""
+                    q: "What is the total number of files stored in our OneDrive tenant?",
+                    a: "147.42M (Approx)"
                 },
                 {
-                    q: "What is a workflow?",
-                    a: ""
+                    q: "What is the purpose of the OneDrive Sync Client?",
+                    a: "Syncs our files and data between the cloud and computer, for offline access."
                 },
                 {
-                    q: "How many workflows we have automated?",
-                    a: ""
+                    q: "Who has the ability to control OneDrive file access?",
+                    a: "OneDrive site / file owners"
                 },
                 {
-                    q: "What is the front-end technology we use?",
-                    a: ""
+                    q: "Can you guess the total number of SharePoint sites in our Synchrony tenant?",
+                    a: "6489"
                 },
                 {
-                    q: "What is the backend technology we use?",
-                    a: ""
+                    q: "Guess how often the Guest users are renewed in our tenant?",
+                    a: "180 days / 6 months"
                 },
                 {
-                    q: "What is No-Touch changes mean?",
-                    a: ""
+                    q: "Can you guess the total number of files stored in SharePoint Online?",
+                    a: "51.51M (Approx)"
                 },
                 {
-                    q: "How can we automate device configurations?",
-                    a: ""
+                    q: "How many workflows were created in the last 6 months?",
+                    a: "440"
                 },
                 {
-                    q: "What database we use?",
-                    a: ""
+                    q: "Who can request to create a New SharePoint/Team in Synchrony?",
+                    a: "Internal Synchrony employees"
                 },
                 {
-                    q: "What method of development we follow?",
-                    a: ""
+                    q: "How many Power Apps forms were created in the last 6 months?",
+                    a: "448"
                 },
                 {
-                    q: "How many integrations we had done so far?",
-                    a: ""
+                    q: "Which feature helps track changes made to a file?",
+                    a: "Version History"
                 },
                 {
-                    q: "What are the logging mechanisms we use?",
-                    a: ""
+                    q: "Can site owners transfer ownership of a site?",
+                    a: "Yes, they can"
                 },
                 {
-                    q: "Have we used AI in the automation?",
-                    a: ""
+                    q: "Can you guess the total SharePoint Online storage used in our tenant?",
+                    a: "240 TB (Approx)"
                 },
                 {
-                    q: "What are the clouds we integrated?",
-                    a: ""
+                    q: "Where do we register guest users in our tenant?",
+                    a: "In the GUM portal (Guest User Management)"
                 }
             ],
-            // Index 4 (Default: NSS) - NSS
-            [
-                {
-                    q: "What is Netauto?",
-                    a: ""
-                },
-                {
-                    q: "What is NIAC?",
-                    a: ""
-                },
-                {
-                    q: "What are the responsibilities of automation team?",
-                    a: ""
-                },
-                {
-                    q: "What is a workflow?",
-                    a: ""
-                },
-                {
-                    q: "How many workflows we have automated?",
-                    a: ""
-                },
-                {
-                    q: "What is the front-end technology we use?",
-                    a: ""
-                },
-                {
-                    q: "What is the backend technology we use?",
-                    a: ""
-                },
-                {
-                    q: "What is No-Touch changes mean?",
-                    a: ""
-                },
-                {
-                    q: "How can we automate device configurations?",
-                    a: ""
-                },
-                {
-                    q: "What database we use?",
-                    a: ""
-                },
-                {
-                    q: "What method of development we follow?",
-                    a: ""
-                },
-                {
-                    q: "How many integrations we had done so far?",
-                    a: ""
-                },
-                {
-                    q: "What are the logging mechanisms we use?",
-                    a: ""
-                },
-                {
-                    q: "Have we used AI in the automation?",
-                    a: ""
-                },
-                {
-                    q: "What are the clouds we integrated?",
-                    a: ""
-                }
+            // Index 4 (Default: Cloud Commanders) - Cloud Commanders
+           [
+  {
+    q: "What was the highest number of customer requests closed by the IAM OPS Team, and can you guess which month?",
+    a: "173, in October 2025"
+  },
+  {
+    q: "Do you know the ServiceNow queue name for IAM BAU Team?",
+    a: "BAUIAMOP"
+  },
+  {
+    q: "Which project management or tracking tool is used to plan, track, manage, and release work?",
+    a: "Jira"
+  },
+  {
+    q: "What is cspack in Azure?",
+    a: "It is a command-line tool that is used for generating service package files."
+  },
+  {
+    q: "What is the accuracy rate in delivering customer requirements for the BAU Team over the past 12 months?",
+    a: "98.34%"
+  },
+  {
+    q: "How many times was the IAM OPS Team able to deliver 100+ requests in the last 12 months?",
+    a: "8 times"
+  },
+  {
+    q: "What is a Pod in Kubernetes?",
+    a: "A Pod is the smallest deployable unit in Kubernetes. It represents one or more containers running in a shared environment."
+  },
+  {
+    q: "What is NSG?",
+    a: "NSG stands for Network Security Group that has ACL rules to allow or deny network traffic to subnets or NICs."
+  },
+  {
+    q: "What is the best Azure solution for executing the code without a server?",
+    a: "Azure Functions service"
+  },
+  {
+    q: "Which IAC solution is majorly used by the Synchrony Team?",
+    a: "CloudFormation"
+  },
+  {
+    q: "What CI/CD solution is used by the Synchrony IAM Team?",
+    a: "Jenkins"
+  },
+  {
+    q: "Which source code editor tool is used by the Synchrony team?",
+    a: "Visual Studio Code"
+  },
+  {
+    q: "What is the name of the IT Service Management tool used by the team?",
+    a: "ServiceNow"
+  },
+  {
+    q: "What is the total number of SOPs followed by the team?",
+    a: "15"
+  },
+  {
+    q: "Which code hosting and collaboration tool is used by the team?",
+    a: "Bitbucket"
+  },
+  {
+    q: "What is the primary responsibility of the Cloud IAM Operations Team?",
+    a: "Implementing IAM policies, roles, and access controls for cloud resources"
+  },
+  {
+    q: "What is the goal of IAM in cloud security?",
+    a: "Ensuring the right individuals have the right access to the right resources"
+  },
+  {
+    q: "Which activity ensures the team’s processes are standardized?",
+    a: "By following the SOPs"
+  },
+  {
+    q: "How does the team ensure correct permissions while delivering customer requirements?",
+    a: "Technical Leads review each PR submitted by IAM OPS engineers."
+  }
+]
 
-            ]
 
 
         ];
@@ -799,7 +858,7 @@
             document.getElementById('q-title-text').innerText = "Questions Panel";
             document.getElementById('step-2-badge').style.backgroundColor = "#f3f4f6";
             document.getElementById('step-2-badge').style.color = "#4b5563";
-            document.getElementById('q-subtitle').innerText = "Spin the wheel to assign questions to a player.";
+            document.getElementById('q-subtitle').innerText = "Spin the wheel.";
             currentAngle = 0;
             drawWheel();
         }
